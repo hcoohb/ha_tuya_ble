@@ -157,6 +157,21 @@
       "wrong_password": {
           "name": "Wrong Password"
       },
+      "unlock_fingerprint": {
+        "name": "Last used Fingerprint"
+      },
+      "unlock_ble": {
+        "name": "Last ble unlock"
+      },
+      "unlock_alerts": {
+        "name": "Lock alert"
+      },
+      "automatic_lock": {
+        "name": "Automatic Locking"
+      },
+      "door_unlock": {
+        "name": "Unlock the door"
+      },
       "low_battery": {
           "name": "Low Battery"
       },

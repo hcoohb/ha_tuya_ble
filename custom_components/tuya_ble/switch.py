@@ -173,6 +173,14 @@ mapping: dict[str, TuyaBLECategorySwitchMapping] = {
                     ),
                 ]
             ),
+            "a6nttc41": [  # Orion Smart Lock
+                TuyaBLESwitchMapping(
+                    dp_id=33,
+                    description=SwitchEntityDescription(
+                        key="automatic_lock"
+                    )
+                )
+            ]
         }
     ),
     "szjqr": TuyaBLECategorySwitchMapping(

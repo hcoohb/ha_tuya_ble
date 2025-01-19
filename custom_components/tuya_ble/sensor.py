@@ -144,6 +144,31 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                     TuyaBLEBatteryMapping(dp_id=8),
                 ],
             ),
+            "a6nttc41": [  # Orion Smart Lock
+                TuyaBLEBatteryMapping(dp_id=8),
+                TuyaBLESensorMapping(
+                    dp_id=12, # Retrieve last fingerprint used
+                    description=SensorEntityDescription(
+                        key="unlock_fingerprint",
+                        icon="mdi:fingerprint",
+                    ),
+                ),
+                TuyaBLESensorMapping(
+                    dp_id=19, # Retrieve last ble unlock
+                    description=SensorEntityDescription(
+                        key="unlock_ble",
+                        # icon="mdi:fingerprint",
+                    ),
+                ),
+                TuyaBLESensorMapping(
+                    dp_id=21, # Retrieve Alerts
+                    description=SensorEntityDescription(
+                        key="unlock_alerts",
+                        # icon="mdi:fingerprint",
+                    ),
+                ),
+            ],
+            
         }
     ),
     "szjqr": TuyaBLECategorySensorMapping(

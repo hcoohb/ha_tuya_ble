@@ -168,6 +168,9 @@
             },
             "wrong_password": {
                 "name": "Wrong Password"
+            },
+            "unlock_fingerprint": {
+                "name": "Last used Fingerprint"
             }
         },
         "switch": {
