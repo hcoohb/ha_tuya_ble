@@ -55,7 +55,6 @@ from .const import (
     TUYA_FACTORY_INFO_MAC,
     TUYA_API_DEVICES_URL,
     TUYA_API_FACTORY_INFO_URL,
-    TUYA_FACTORY_INFO_MAC,
     CONF_ACCESS_ID,
     CONF_ACCESS_SECRET,
     CONF_AUTH_TYPE,
@@ -195,6 +194,10 @@ class HASSTuyaBLEDeviceManager(AbstaractTuyaBLEDeviceManager):
                                 factory_info[TUYA_FACTORY_INFO_MAC][i : i + 2]
                                 for i in range(0, 12, 2)
                             ).upper()
+                            _LOGGER.debug(f"MAC: {mac}")
+
+                            mac = factory_info[TUYA_FACTORY_INFO_MAC].upper()
+                            _LOGGER.debug(f"MAC: {mac}")
                             item.credentials[mac] = {
                                 CONF_ADDRESS: mac,
                                 CONF_UUID: device.get("uuid"),
@@ -206,6 +209,7 @@ class HASSTuyaBLEDeviceManager(AbstaractTuyaBLEDeviceManager):
                                 CONF_PRODUCT_MODEL: device.get("model"),
                                 CONF_PRODUCT_NAME: device.get("product_name"),
                             }
+                            _LOGGER.debug(f"item_cred: {item.credentials}")
 
     async def build_cache(self) -> None:
         global _cache
