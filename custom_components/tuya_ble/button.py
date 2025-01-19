@@ -95,6 +95,19 @@ mapping: dict[str, TuyaBLECategoryButtonMapping] = {
             ),
         },
     ),
+    "ms": TuyaBLECategoryButtonMapping(
+        products={
+            "a6nttc41": # Smart Lock
+            [
+                TuyaBLEButtonMapping(
+                    dp_id=6,
+                    description=ButtonEntityDescription(
+                        key="door_unlock",
+                    ),
+                ),
+            ],
+        },
+    ),
     "znhsb": TuyaBLECategoryButtonMapping(
         products={
             "cdlandip":  # Smart water bottle

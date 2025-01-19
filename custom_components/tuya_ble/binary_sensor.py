@@ -67,6 +67,18 @@ mapping: dict[str, TuyaBLECategoryBinarySensorMapping] = {
             ],
         },
     ),
+    # "ms": TuyaBLECategoryBinarySensorMapping(
+    #     products={
+    #         "a6nttc41": [  # Orion Smart Lock
+    #             TuyaBLEBinarySensorMapping(
+    #                 dp_id=33,
+    #                 description=BinarySensorEntityDescription(
+    #                     key="automatic_lock"
+    #                 )
+    #             )
+    #         ]
+    #     }
+    # )
 }
 
 
