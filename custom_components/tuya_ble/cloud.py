@@ -16,7 +16,6 @@ from homeassistant.const import (
 )
 from homeassistant.core import HomeAssistant
 from homeassistant.components.tuya.const import (
-    CONF_APP_TYPE,
     CONF_ENDPOINT,
     DOMAIN as TUYA_DOMAIN,
     TUYA_RESPONSE_RESULT,
@@ -49,6 +48,7 @@ from .const import (
     CONF_PRODUCT_ID,
     CONF_DEVICE_NAME,
     CONF_PRODUCT_NAME,
+    CONF_APP_TYPE,
     DOMAIN,
     TUYA_API_DEVICES_URL,
     TUYA_API_FACTORY_INFO_URL,
