@@ -28,6 +28,7 @@ CONF_ACCESS_ID = "access_id"
 CONF_ACCESS_SECRET = "access_secret"
 SMARTLIFE_APP = "smartlife"
 TUYA_SMART_APP = "tuyaSmart"
+CONF_APP_TYPE="tuya_app_type"
 
 TUYA_API_DEVICES_URL: Final = "/v1.0/users/%s/devices"
 TUYA_API_FACTORY_INFO_URL: Final = "/v1.0/iot-03/devices/factory-infos?device_ids=%s"
