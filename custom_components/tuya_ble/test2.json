@@ -1,0 +1,144 @@
+{
+    "modelId": "000003puzt",
+    "services": [
+        {
+            "actions": [],
+            "code": "",
+            "description": "",
+            "events": [],
+            "name": "默认服务",
+            "properties": [
+                {
+                    "abilityId": 1,
+                    "accessMode": "rw",
+                    "code": "unlock_method_create",
+                    "description": "【必选】App蓝牙近距离连接门锁后，进行开门方式的创建操作，支持指纹、密码、卡等方式的创建",
+                    "name": "添加开门方式",
+                    "typeSpec": {
+                        "type": "raw",
+                        "maxlen": 128
+                    }
+                },
+                {
+                    "abilityId": 2,
+                    "accessMode": "rw",
+                    "code": "unlock_method_delete",
+                    "description": "【必选】App蓝牙近距离连接门锁后，进行开门方式的删除操作，支持指纹、密码、卡等方式的删除",
+                    "name": "删除开门方式",
+                    "typeSpec": {
+                        "type": "raw",
+                        "maxlen": 128
+                    }
+                },
+                {
+                    "abilityId": 6,
+                    "accessMode": "rw",
+                    "code": "bluetooth_unlock",
+                    "description": "【手机蓝牙解锁必选之一】\\n【支持蓝牙配件不能选择该dp，需选择dp71，与70&71互斥，2选1】",
+                    "extensions": {
+                        "attribute": "512"
+                    },
+                    "name": "蓝牙解锁",
+                    "typeSpec": {
+                        "type": "raw",
+                        "maxlen": 128
+                    }
+                },
+                {
+                    "abilityId": 8,
+                    "accessMode": "ro",
+                    "code": "residual_electricity",
+                    "description": "【可选，但必须二选一】门锁上报电量百分比。剩余电量与电量状态，必须二选一   默认值为-1时不显示电量",
+                    "extensions": {
+                        "trigger": "direct"
+                    },
+                    "name": "剩余电量",
+                    "typeSpec": {
+                        "type": "value",
+                        "max": 100,
+                        "min": -1,
+                        "scale": 0,
+                        "step": 1
+                    }
+                },
+                {
+                    "abilityId": 12,
+                    "accessMode": "ro",
+                    "code": "unlock_fingerprint",
+                    "description": "【可选】指纹在门锁上录入，录入完成后由硬件分配id，发生指纹解锁后，门锁将上报该dp点。请用记录型上报",
+                    "extensions": {
+                        "trigger": "direct"
+                    },
+                    "name": "指纹解锁",
+                    "typeSpec": {
+                        "type": "value",
+                        "max": 999,
+                        "min": 0,
+                        "scale": 0,
+                        "step": 1
+                    }
+                },
+                {
+                    "abilityId": 19,
+                    "accessMode": "ro",
+                    "code": "unlock_ble",
+                    "description": "【必须】请用记录型上报成功上报：成员+蓝牙开门+时间（开门记录）",
+                    "extensions": {
+                        "trigger": "direct"
+                    },
+                    "name": "蓝牙解锁记录",
+                    "typeSpec": {
+                        "type": "value",
+                        "max": 999,
+                        "min": 0,
+                        "scale": 0,
+                        "step": 1
+                    }
+                },
+                {
+                    "abilityId": 33,
+                    "accessMode": "rw",
+                    "code": "automatic_lock",
+                    "description": "【可选】自动落锁/不自动落锁，仅使用本dp点，可以实现自动落锁与不自动落锁（即常开模式）的切换。\\n可选配合下一个dp自动落锁延时，组合实现以下功能：\\n1、默认时长自动落锁\\n2、指定时长自动落锁\\n3、常开\\n自动落锁最小延时1，最大1800，单位秒",
+                    "extensions": {
+                        "iconName": "icon-power",
+                        "attribute": "1280",
+                        "trigger": "direct"
+                    },
+                    "name": "自动落锁开关",
+                    "typeSpec": {
+                        "type": "bool"
+                    }
+                },
+                {
+                    "abilityId": 35,
+                    "accessMode": "rw",
+                    "code": "synch_member",
+                    "description": "下发同步指令：差量同步开门方式（即只同步指令中包含序号的开门方式）。注意：一条指令同步不能超过50字节，即同步硬件个数在50个以下",
+                    "extensions": {
+                        "attribute": "128"
+                    },
+                    "name": "同步成员开门方式",
+                    "typeSpec": {
+                        "type": "raw",
+                        "maxlen": 128
+                    }
+                },
+                {
+                    "abilityId": 54,
+                    "accessMode": "rw",
+                    "code": "synch_method",
+                    "description": "【具备本地电子解锁条件下 必选】当智能锁上存在物理解锁方式，包括不限于指纹、密码、卡等方式，并且可以在门锁硬件上对这些解锁方式进行操作时，需要选择该dp\\n下发同步指令，全量同步门锁下的所有开门方式（本地存储数据量较大时选用）",
+                    "extensions": {
+                        "attribute": "512"
+                    },
+                    "name": "同步解锁方式",
+                    "typeSpec": {
+                        "type": "raw",
+                        "maxlen": 128
+                    }
+                }
+            ]
+        }
+    ]
+}
